@@ -1,0 +1,4 @@
+rootProject.name = 'JavaSnaps'
+
+include 'day001'
+
