@@ -2,13 +2,17 @@ package com.pawelpluta.day001;
 
 import java.time.Instant;
 
-record Auction(ItemId item, Instant dueDate, Bid highestBid, boolean isOpen) {
+import static com.pawelpluta.day001.AuctionStatus.CLOSED;
+import static com.pawelpluta.day001.AuctionStatus.OPENED;
+
+record Auction(ItemId item, Instant dueDate, Bid highestBid, AuctionStatus status) {
 
     public Auction(ItemId item, Instant dueDate, Bid highestBid) {
-        this(item, dueDate, highestBid, true);
+        this(item, dueDate, highestBid, OPENED);
     }
+
     Auction place(Bid bid) {
-        if (!isOpen) {
+        if (OPENED != status) {
             return this;
         }
         if (highestBid.isHigherThan(bid.value())) {
@@ -16,11 +20,11 @@ record Auction(ItemId item, Instant dueDate, Bid highestBid, boolean isOpen) {
         } else if (highestBid.isAfter(bid.offeredAt())) {
             return this;
         }
-        return new Auction(item, dueDate, bid, true);
+        return new Auction(item, dueDate, bid, OPENED);
     }
 
     Auction close() {
-        return new Auction(item, dueDate, highestBid, false);
+        return new Auction(item, dueDate, highestBid, CLOSED);
     }
 
     Money currentBid() {
