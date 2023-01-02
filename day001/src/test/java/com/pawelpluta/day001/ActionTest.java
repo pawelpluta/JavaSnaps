@@ -47,4 +47,17 @@ class ActionTest {
         Assertions.assertEquals(AuctionFixture.aMoney(10000L), updatedAuction.currentBid());
     }
 
+    @Test
+    void bidPlacedAfterClosingAuctionIsNotCounted() {
+        // given
+        Auction auction = new Auction(AuctionFixture.someItemId(), tomorrow(), AuctionFixture.bidValued(5000L));
+        Auction updatedAuction = auction.place(AuctionFixture.bidValued(6000L));
+        Auction closedAuction = updatedAuction.close();
+
+        // when
+        closedAuction.place(AuctionFixture.bidValued(7000L));
+
+        // then
+        Assertions.assertEquals(AuctionFixture.aMoney(6000L), closedAuction.currentBid());
+    }
 }
