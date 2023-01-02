@@ -3,6 +3,7 @@ package com.pawelpluta.day001;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static com.pawelpluta.day001.AuctionClosedException.BIG_AFTER_AUCTION_CLOSED_MESSAGE;
 import static com.pawelpluta.day001.TimeFixture.today;
 import static com.pawelpluta.day001.TimeFixture.tomorrow;
 import static com.pawelpluta.day001.TimeFixture.twoDaysFromNow;
@@ -54,10 +55,8 @@ class ActionTest {
         Auction updatedAuction = auction.place(AuctionFixture.bidValued(6000L));
         Auction closedAuction = updatedAuction.close();
 
-        // when
-        closedAuction.place(AuctionFixture.bidValued(7000L));
-
-        // then
+        // when & then
+        Assertions.assertThrows(AuctionClosedException.class, () -> closedAuction.place(AuctionFixture.bidValued(7000L)), BIG_AFTER_AUCTION_CLOSED_MESSAGE);
         Assertions.assertEquals(AuctionFixture.aMoney(6000L), closedAuction.currentBid());
     }
 }
