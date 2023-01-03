@@ -1,7 +1,12 @@
 package com.pawelpluta.day002;
 
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
 class JoinedText {
 
+    private static final String SPACE_DELIMITER = " ";
     private final String value;
 
     private JoinedText(String value) {
@@ -13,6 +18,9 @@ class JoinedText {
     }
 
     static JoinedText of(String... texts) {
-        return null;
+        return new JoinedText(Arrays.stream(texts)
+                .filter(Objects::nonNull)
+                .filter(t -> !t.isBlank())
+                .collect(Collectors.joining(SPACE_DELIMITER)));
     }
 }
