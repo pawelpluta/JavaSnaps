@@ -13,3 +13,4 @@ Every task will focus on Java, popular libraries and frameworks. So, let's start
 ## Tasks
 
 * [Day 1 - bug hunting](/day001/README.MD)
+* [Day 2 - joining texts](/day002/README.MD)
