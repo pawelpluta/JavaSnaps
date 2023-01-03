@@ -5,7 +5,9 @@ import java.time.Instant;
 record Auction(ItemId item, Instant dueDate, Bid highestBid) {
 
     Auction place(Bid bid) {
-        if (highestBid.isHigherThan(bid.value())) {
+        if (bid.isAfter(dueDate)) {
+            return this;
+        } else if (highestBid.isHigherThan(bid.value())) {
             return this;
         } else if (highestBid.isAfter(bid.offeredAt())) {
             return this;
