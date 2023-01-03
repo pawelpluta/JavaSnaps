@@ -40,7 +40,7 @@ class JoinedTextTest {
           String text2 = "test2";
 
           // expect
-          assertEquals("", JoinedText.of(text1, nullText, text2).value());
+          assertEquals("test1 test2", JoinedText.of(text1, nullText, text2).value());
      }
 
 }
