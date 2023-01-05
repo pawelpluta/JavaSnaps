@@ -2,4 +2,5 @@ rootProject.name = 'JavaSnaps'
 
 include 'day001'
 include 'day002'
+include 'day003'
 
