@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class EmailRegexTest {
 
-    private static final String TESTED_REGEX_VALUE = "";
+    private static final String TESTED_REGEX_VALUE = "^[\\w.+_-]+@([\\w\\-]+\\.){1,3}?\\w+$";
     private static final Pattern TESTED_REGEX = Pattern.compile(TESTED_REGEX_VALUE);
 
     @Test
