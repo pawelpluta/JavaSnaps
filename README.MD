@@ -17,3 +17,5 @@ Every task will focus on Java, popular libraries and frameworks. So, let's start
 * [Day 3 - parameterized tests](/day003/README.MD)
 * [Day 4 - palindrome](/day004/README.MD)
 * [Day 5 - email validation](/day005/README.MD)
+* [Day 6](/day006/README.MD)
+* [Day 7](/day007/README.MD)
