@@ -1,5 +1,8 @@
 package com.pawelpluta.day006;
 
+import com.pawelpluta.day006.MongoDbSupport;
+import com.pawelpluta.day006.Person;
+import com.pawelpluta.day006.PersonRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,7 +14,7 @@ import static com.pawelpluta.day006.PersonFixture.randomLastName;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-class MongoDBTests {
+class MongoDBTests extends MongoDbSupport {
 
     @Autowired
     PersonRepository personRepository;
