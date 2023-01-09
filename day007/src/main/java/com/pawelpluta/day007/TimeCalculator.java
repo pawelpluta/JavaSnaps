@@ -4,22 +4,22 @@ import java.time.Duration;
 
 class TimeCalculator {
     Long minutesToSeconds(Long minutes) {
-        return null;
+        return Duration.ofMinutes(minutes).toSeconds();
     }
 
     Long secondsToHours(Long seconds) {
-        return null;
+        return Duration.ofSeconds(seconds).toHours();
     }
 
     Long weeksToDays(Long weeks) {
-        return null;
+        return weeks * 7;
     }
 
     Long daysToWeeks(Long days) {
-        return null;
+        return days / 7;
     }
 
     Long weeksToSeconds(Long weeks) {
-        return null;
+        return Duration.ofDays(weeksToDays(weeks)).toSeconds();
     }
 }
