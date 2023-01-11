@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+}
+
+group 'com.pawelpluta'
+version '0.0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs += "--enable-preview"
+}
+
+tasks.withType(Test) {
+    jvmArgs += "--enable-preview"
+}
+
+tasks.withType(JavaExec) {
+    jvmArgs += '--enable-preview'
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(19))
+    }
+}
