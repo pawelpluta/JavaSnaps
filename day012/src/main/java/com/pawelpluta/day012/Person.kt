@@ -10,11 +10,14 @@ internal data class Person(
     companion object {}
 
     fun displayName(): String {
+        return "$firstName $lastName"
     }
 
     fun mailingAddress(): Address {
+        return preferredAddress ?: homeAddress
     }
 
     fun olderSiblings(): List<Person> {
+        return siblings.filter { it.birthYear < birthYear }
     }
 }
