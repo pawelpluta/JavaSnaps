@@ -1,4 +1,4 @@
-# Day 13 - stub 'n' mock
+# Day 14 - stub 'n' mock
 
 While writing tests, sometimes we need to fake some behaviour.
 It is useful when some objects logic is complex or takes a lot of time to execute.
