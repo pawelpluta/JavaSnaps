@@ -1,0 +1,6 @@
+kafka:
+  userRegistered:
+    bootstrapServers: 127.0.0.1:9091
+    topic: company.user
+    groupId: userLogin-userRegistered-v1
+    offset: earliest
