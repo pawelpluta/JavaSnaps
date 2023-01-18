@@ -1,0 +1,7 @@
+kafka:
+  tickets:
+    bootstrapServers: 127.0.0.1:9092
+    topic: tickets-topic
+  seats:
+    bootstrapServers: 127.0.0.1:9092
+    topic: seats-topic
