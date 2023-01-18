@@ -1,0 +1,5 @@
+kafka:
+  userRegistered:
+    topic: company.user
+    groupId: userLogin-userRegistered-integrationTest
+    offset: earliest
