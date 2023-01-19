@@ -1,0 +1,7 @@
+micronaut:
+  application:
+    name: day018
+netty:
+  default:
+    allocator:
+      max-order: 3
