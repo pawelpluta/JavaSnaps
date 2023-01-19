@@ -26,7 +26,7 @@ dependencies {
 
 
 application {
-    mainClass.set("com.pawelpluta.day017.Application")
+    mainClass.set("com.pawelpluta.day018.Application")
 }
 java {
     sourceCompatibility = JavaVersion.toVersion("17")
