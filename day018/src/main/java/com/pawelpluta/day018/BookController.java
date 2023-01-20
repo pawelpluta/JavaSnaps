@@ -18,7 +18,6 @@ class BookController {
     @Get("/{bookId}")
     @Produces(MediaType.APPLICATION_JSON)
     HttpResponse<Book> getBook(String bookId) {
-        bookService.findBook(new BookId(bookId));
-        return null;
+        return bookService.findBook(new BookId(bookId)).map(HttpResponse::ok).orElse(HttpResponse.notFound());
     }
 }
