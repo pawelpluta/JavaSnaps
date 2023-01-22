@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: db.changelog-202301202100
+      author: ppluta
+      changes:
+        - createTable:
+            catalogName: it
+            columns:
+              - column:
+                  name: key
+                  type: varchar(255)
+              - column:
+                  name: value
+                  type: varchar(255)
+            schemaName: public
+            tableName: dictionary

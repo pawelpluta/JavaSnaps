@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: db.changelog-202301202105
+      author: ppluta
+      changes:
+        - insert:
+            catalogName: it
+            columns:
+              - column:
+                  name: key
+                  value: some_dictionary_key
+              - column:
+                  name: value
+                  value: some_dictionary_value
+            dbms: 'postgresql'
+            schemaName: public
+            tableName: dictionary
