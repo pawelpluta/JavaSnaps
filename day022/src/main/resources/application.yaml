@@ -1,0 +1,4 @@
+dummyClient:
+  api:
+    url: http://localhost:8080
+    path: /resources/{resourceId}

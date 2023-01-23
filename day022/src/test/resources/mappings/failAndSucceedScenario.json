@@ -1,0 +1,35 @@
+{
+  "mappings": [
+    {
+      "scenarioName": "Fail once and then work",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/resources/111"
+      },
+      "response": {
+        "status": 500
+      },
+      "newScenarioState": "Failed for first time"
+    },
+    {
+      "scenarioName": "Fail once and then work",
+      "requiredScenarioState": "Failed for first time",
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/resources/111"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "jsonBody": {
+          "field1": "field1 value for 111",
+          "field2": "field2 value for 111"
+        }
+      },
+      "newScenarioState": "Finished"
+    }
+  ]
+}

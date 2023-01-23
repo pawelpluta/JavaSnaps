@@ -1,0 +1,4 @@
+dummyClient:
+  api:
+    url: http://localhost:${wiremock.server.port}
+    path: /resources/{resourceId}
