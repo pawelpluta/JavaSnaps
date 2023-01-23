@@ -6,8 +6,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
-import java.net.URI;
-import java.util.Map;
 import java.util.Optional;
 
 @Component
@@ -33,9 +31,6 @@ class SampleClient {
                     ResourceResponse.class,
                     resourceId));
         } catch (HttpClientErrorException e) {
-            if (e.getStatusCode() != HttpStatusCode.valueOf(404)) {
-                throw e;
-            }
             return Optional.empty();
         }
     }

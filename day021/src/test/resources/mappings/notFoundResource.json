@@ -4,6 +4,6 @@
     "urlPathPattern": "/resources/999"
   },
   "response": {
-    "jsonBody" : {}
+    "status": 404
   }
 }
