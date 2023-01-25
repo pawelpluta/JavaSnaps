@@ -1,0 +1,8 @@
+longResponseClient:
+  api:
+    url: http://localhost:8080
+    path: /longResponse
+evenLongerResponseClient:
+  api:
+    url: http://localhost:8080
+    path: /evenLongerResponse

@@ -35,3 +35,4 @@ Every task will focus on Java, popular libraries and frameworks. So, let's start
 * [Day 21](/day021/README.MD)
 * [Day 22](/day022/README.MD)
 * [Day 23](/day023/README.MD)
+* [Day 24](/day024/README.MD)
