@@ -18,22 +18,26 @@ class AccountEntity {
     private String id;
     @Column(name = "balance")
     private Double balance;
+    @Column(name = "event_ids")
+    private String[] eventIds;
 
     public AccountEntity() {
     }
 
-    public AccountEntity(String id, Double balance) {
+    public AccountEntity(String id, Double balance, String[] eventIds) {
         this.id = id;
         this.balance = balance;
+        this.eventIds = eventIds;
     }
 
     static AccountEntity from(Account account) {
         return new AccountEntity(
                 account.id().value(),
-                account.balance().doubleValue());
+                account.balance().doubleValue(),
+                account.consumedEventIds().toArray(new String[0]));
     }
 
     Account toModel() {
-        return new Account(new AccountId(id), BigDecimal.valueOf(balance));
+        return new Account(new AccountId(id), BigDecimal.valueOf(balance), List.of(eventIds));
     }
 }

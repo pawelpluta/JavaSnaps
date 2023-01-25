@@ -41,7 +41,7 @@ class AccountServiceIT implements PostgresqlSupport {
     }
 
     private void thereIsAccountWithBalance(AccountId accountId, BigDecimal balance) {
-        accountRepository.save(new Account(accountId, balance));
+        accountRepository.save(new Account(accountId, balance, emptyList()));
     }
 
     private RechargeAccountCommand rechargeAccountBy(AccountId accountId, BigDecimal amount) {
