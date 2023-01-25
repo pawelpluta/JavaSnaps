@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/longResponse"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "longResponseField": "that took 250 ms"
+    },
+    "fixedDelayMilliseconds": 250
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/evenLongerResponse"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "evenLongerResponseField": "that took 350 ms"
+    },
+    "fixedDelayMilliseconds": 350
+  }
+}
