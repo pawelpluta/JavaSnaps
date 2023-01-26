@@ -4,6 +4,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+
 @RestController
 @RequestMapping("/dependentEndpoint")
 class TestController {
@@ -18,12 +21,25 @@ class TestController {
 
     @GetMapping
     TestResponse execute() {
-        return new TestResponse(
-                longResponseClient.get().longResponseField(),
-                evenLongerResponseClient.get().evenLongerResponseField());
+        CompletableFuture<FeignLongResponseClient.LongResponse> longResponse = getLongResponse();
+        CompletableFuture<FeignEvenLongerResponseClient.EventLongerResponse> evenLongerResponse = getEvenLongerResponse();
+        try {
+            return new TestResponse(
+                    longResponse.get().longResponseField(),
+                    evenLongerResponse.get().evenLongerResponseField());
+        } catch (InterruptedException | ExecutionException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    record TestResponse(String longResponseField, String evenLongerResponseField) {
+    private CompletableFuture<FeignLongResponseClient.LongResponse> getLongResponse() {
+        return CompletableFuture.supplyAsync(longResponseClient::get);
     }
+
+    private CompletableFuture<FeignEvenLongerResponseClient.EventLongerResponse> getEvenLongerResponse() {
+        return CompletableFuture.supplyAsync(evenLongerResponseClient::get);
+    }
+
+    record TestResponse(String longResponseField, String evenLongerResponseField){}
 
 }
