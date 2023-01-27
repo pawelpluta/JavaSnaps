@@ -1,8 +1,10 @@
 package com.pawelpluta.day025;
 
+import org.apache.commons.lang3.RandomStringUtils;
+
 class CommandFixture {
     static MailService.CreateUserCommand someCreateUserCommand() {
-        return new MailService.CreateUserCommand("some_user_id", "some_user_login");
+        return new MailService.CreateUserCommand("some_user_id" + RandomStringUtils.randomAlphabetic(10), "some_user_login");
     }
 
     static MailService.AssignEmailAddressCreateUserCommand someEmailAssignCommand(String userId) {
