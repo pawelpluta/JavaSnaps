@@ -1,0 +1,9 @@
+kafka:
+  orders:
+    topic: orders-topic
+    groupId: orders-integrationTest
+    offset: earliest
+  reservations:
+    topic: reservations-topic
+    groupId: reservations-integrationTest
+    offset: earliest
