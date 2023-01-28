@@ -68,7 +68,14 @@ public class BankAccount {
 
         @Override
         public String jsonBody() {
-            return "{}";
+            return """
+            {
+                "id": "%s",
+                "type": "BankAccountBalanceDecreased",
+                "accountNumber": "%s",
+                "oldBalance": %f,
+                "newBalance": %f
+            }""".formatted(id, accountNumber, oldBalance, newBalance);
         }
     }
 
