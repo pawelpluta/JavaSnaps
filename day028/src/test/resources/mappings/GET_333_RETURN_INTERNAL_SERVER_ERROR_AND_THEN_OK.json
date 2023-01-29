@@ -1,0 +1,32 @@
+{
+  "mappings": [
+    {
+      "scenarioName": "Fail and restore",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/sample/333"
+      },
+      "response": {
+        "status": 500
+      },
+      "newScenarioState": "Service failed"
+    },
+    {
+      "scenarioName": "Fail and restore",
+      "requiredScenarioState": "Service failed",
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/sample/333"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "plain/text"
+        },
+        "body": "Valid response from remote service"
+      },
+      "newScenarioState": "Finished"
+    }
+  ]
+}

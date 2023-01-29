@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/sample/111"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "plain/text"
+    },
+    "body": "Valid response from remote service"
+  }
+}
