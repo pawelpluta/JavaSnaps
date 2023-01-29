@@ -1,0 +1,3 @@
+sampleClient:
+  api:
+    url: http://localhost:${wiremock.server.port}/sample
