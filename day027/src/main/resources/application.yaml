@@ -1,0 +1,11 @@
+kafka:
+  orders:
+    bootstrapServers: 127.0.0.1:9092
+    topic: orders-topic
+    groupId: orders-integrationTest
+    offset: earliest
+  reservations:
+    bootstrapServers: 127.0.0.1:9092
+    topic: reservations-topic
+    groupId: reservations-integrationTest
+    offset: earliest
