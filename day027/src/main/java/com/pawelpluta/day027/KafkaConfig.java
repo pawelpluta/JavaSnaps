@@ -37,6 +37,13 @@ class KafkaConfig {
     @Value("${kafka.reservations.offset}")
     private String reservationsOffset;
 
+    @Value("${kafka.payments.bootstrapServers}")
+    private String paymentsBootstrapServers;
+    @Value("${kafka.payments.groupId}")
+    private String paymentsConsumerGroupId;
+    @Value("${kafka.payments.offset}")
+    private String paymentsOffset;
+
     @Bean
     public Map<String, Object> ordersConsumerConfigs() {
         Map<String, Object> props = new HashMap<>();
@@ -90,6 +97,32 @@ class KafkaConfig {
     }
 
     @Bean
+    public Map<String, Object> paymentsConsumerConfigs() {
+        Map<String, Object> props = new HashMap<>();
+        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, paymentsBootstrapServers);
+        props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
+        props.put(ConsumerConfig.GROUP_ID_CONFIG, paymentsConsumerGroupId);
+        props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, paymentsOffset);
+        return props;
+    }
+
+    @Bean
+    public ConsumerFactory<String, OrderPaymentRejectedEvent> paymentsConsumerFactory() {
+        return new DefaultKafkaConsumerFactory<>(
+                ordersConsumerConfigs(),
+                new StringDeserializer(),
+                new JsonDeserializer<>(OrderPaymentRejectedEvent.class));
+    }
+
+    @Bean
+    public ConcurrentKafkaListenerContainerFactory<String, OrderPaymentRejectedEvent> paymentsKafkaListenerContainerFactory() {
+        ConcurrentKafkaListenerContainerFactory<String, OrderPaymentRejectedEvent> factory = new ConcurrentKafkaListenerContainerFactory<>();
+        factory.setConsumerFactory(paymentsConsumerFactory());
+        return factory;
+    }
+
+    @Bean
     public Map<String, Object> reservationsProducerConfigs() {
         Map<String, Object> props = new HashMap<>();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, reservationsBootstrapServers);
@@ -108,4 +141,22 @@ class KafkaConfig {
         return new KafkaTemplate<>(reservationsProducerFactory());
     }
 
+    @Bean
+    public Map<String, Object> paymentsProducerConfigs() {
+        Map<String, Object> props = new HashMap<>();
+        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, paymentsBootstrapServers);
+        props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
+        return props;
+    }
+
+    @Bean
+    public ProducerFactory<String, OrderPaymentRejectedEvent> paymentsProducerFactory() {
+        return new DefaultKafkaProducerFactory<>(paymentsProducerConfigs());
+    }
+
+    @Bean
+    public KafkaTemplate<String, OrderPaymentRejectedEvent> paymentsKafkaTemplate() {
+        return new KafkaTemplate<>(paymentsProducerFactory());
+    }
 }

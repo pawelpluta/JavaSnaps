@@ -9,3 +9,8 @@ kafka:
     topic: reservations-topic
     groupId: reservations-integrationTest
     offset: earliest
+  payments:
+    bootstrapServers: 127.0.0.1:9092
+    topic: payments-topic
+    groupId: payments-integrationTest
+    offset: earliest

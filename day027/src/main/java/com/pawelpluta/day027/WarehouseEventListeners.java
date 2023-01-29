@@ -26,6 +26,14 @@ class WarehouseEventListeners {
         });
     }
 
+    @KafkaListener(topics = "${kafka.payments.topic}", containerFactory = "paymentsKafkaListenerContainerFactory")
+    void releaseReservation(OrderPaymentRejectedEvent event) {
+        productRepository.findById(event.productId()).ifPresent(product -> {
+            Product updatedProduct = product.release(event);
+            productRepository.save(updatedProduct);
+        });
+    }
+
     private void sendEvents(Product updatedProduct) {
         updatedProduct.reservations().stream().findFirst()
                 .ifPresent(reservationEvent -> reservationsKafkaTemplate.send("reservations-topic", reservationEvent));

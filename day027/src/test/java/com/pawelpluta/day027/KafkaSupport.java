@@ -20,8 +20,10 @@ interface KafkaSupport {
         KAFKA_CONTAINER.start();
         propertyRegistry.add("kafka.orders.bootstrapServers", KAFKA_CONTAINER::getBootstrapServers);
         propertyRegistry.add("kafka.reservations.bootstrapServers", KAFKA_CONTAINER::getBootstrapServers);
+        propertyRegistry.add("kafka.payments.bootstrapServers", KAFKA_CONTAINER::getBootstrapServers);
         createTopic("orders-topic");
         createTopic("reservations-topic");
+        createTopic("payments-topic");
     }
 
     private static void createTopic(String topicName) {
