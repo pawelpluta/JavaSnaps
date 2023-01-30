@@ -1,0 +1,30 @@
+plugins {
+    id 'org.springframework.boot' version '3.0.1'
+    id 'io.spring.dependency-management' version '1.1.0'
+    id 'java'
+}
+
+group 'com.pawelpluta'
+version '0.0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    runtimeOnly 'org.postgresql:postgresql'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'jakarta.persistence:jakarta.persistence-api:3.1.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.testcontainers:testcontainers:1.17.6'
+    testImplementation 'org.testcontainers:postgresql:1.17.6'
+    testImplementation 'org.apache.commons:commons-lang3:3.12.0'
+    testImplementation 'org.awaitility:awaitility:4.2.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.1'
+}
+
+test {
+    useJUnitPlatform()
+}
