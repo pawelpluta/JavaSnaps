@@ -1,4 +1,4 @@
-# Day 15 - kafka listener
+# Day 15 - Kafka Listener
 
 Today you need to implement kafka listener and save received information into database.
 You will need to configure it first, then create a listener class and method with implementation.

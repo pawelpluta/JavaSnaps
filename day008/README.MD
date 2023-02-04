@@ -1,4 +1,4 @@
-# Day 8 - Request validation
+# Day 8 - Request Validation
 
 Perform request body validation. You can use javax.validation library (for Spring Boot 3 use jakarta instead).
 Rules for validation are:

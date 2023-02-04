@@ -1,4 +1,4 @@
-# Day 26 - transactional outbox
+# Day 26 - Transactional Outbox
 
 Today's task is to implement a pattern that sends out events and persist aggregate changes in single transaction.
 Usually it is implemented on database with a table dedicated for events, where they are stored. 

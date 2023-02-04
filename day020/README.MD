@@ -1,4 +1,4 @@
-# Day 20 - liquibase
+# Day 20 - Liquibase
 
 Liquibase allows for keeping database schema versioned and up to date.
 It can perform automatic database migration by executing a definition provided in files, or might be a step in deployment pipeline.

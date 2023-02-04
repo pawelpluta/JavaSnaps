@@ -1,4 +1,4 @@
-# Day 24 - synchronous calls
+# Day 24 - Synchronous Calls
 
 Todays task is to optimize code that needs to perform two, time consuming operations.
 `TestController` invokes REST calls to other services, that takes long time to respond (250 and 350 milliseconds).

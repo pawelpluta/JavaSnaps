@@ -1,4 +1,4 @@
-# Day 12 - Kotlin basics
+# Day 12 - Kotlin Basics
 
 Multiple languages are using JVM. An alternative is Kotlin. 
 Although new Java version catch up the features that Kotlin added, it is still nice to use it.

@@ -1,4 +1,4 @@
-# Day 18 - micronaut REST error handling
+# Day 18 - Micronaut REST Error Handling
 
 Yesterday we covered very basic use case for REST API in micronaut.
 Today we need to handle the response codes, depending on the application behaviour.

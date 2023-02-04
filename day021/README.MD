@@ -1,4 +1,4 @@
-# Day 21 - wiremock
+# Day 21 - Wiremock
 
 One of the software parts that should be tested are interfaces.
 This task will focus on outgoing REST interface - so a situation when our application is a client.

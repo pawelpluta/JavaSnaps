@@ -1,4 +1,4 @@
-# Day 25 - randomized test data
+# Day 25 - Randomized Test Data
 
 Sometimes during development you might face non-deterministic test results.
 On some workstations tests will fail, while on an another will work just fine.

@@ -1,4 +1,4 @@
-# Day 27 - saga as orchestrator
+# Day 27 - Saga as Orchestrator
 
 Saga pattern allows for dividing one big transaction across multiple smaller ones.
 It can be useful in distributed systems to perform complex processes.

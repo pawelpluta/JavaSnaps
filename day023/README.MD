@@ -1,4 +1,4 @@
-# Day 23 - idempotent consumer
+# Day 23 - Idempotent Consumer
 
 This task is related to a problem commonly faced in distributed system.
 Due to different reasons, the same message might be delivered multiple times, causing the same data to be processed twice or more.

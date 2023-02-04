@@ -1,4 +1,4 @@
-# Day 29 - CQRS - creating read model
+# Day 29 - CQRS - Creating Read Model
 
 This task require from you preparation of dedicated data structure that will handle queries.
 In this system, customer is attached to bank.

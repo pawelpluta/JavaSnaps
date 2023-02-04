@@ -1,4 +1,4 @@
-# Day 9 - Pattern Matching for switch
+# Day 9 - Pattern Matching For Switch
 
 Today's task requires you to enable preview features in your IDE (if you are only using gradle from command line, than it is covered by build.gradle).
 With Java 19, Pattern Matching for switch came in 3rd preview. 

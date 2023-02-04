@@ -1,4 +1,4 @@
-# Day 1 - bug hunting
+# Day 1 - Bug Hunting
 
 There was an incident at one of the Rembrandt masterpiece auction. After the auction was closed and the highest bid was selected, somehow the Offerer information didn't match. It looked like someone placed a higher bid after the auction was closed!
 

@@ -1,4 +1,4 @@
-# Day 6 - testcontainers
+# Day 6 - Testcontainers
 
 Integration tests are a great way to check your application.
 Years back, when database was needed for tests, some inmemory implementation were used by developers, such as embed mongo.

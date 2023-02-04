@@ -1,4 +1,4 @@
-# Day 30 - event sourcing
+# Day 30 - Event Sourcing
 
 On the 30th day you need to implement an aggregate for library member.
 Your implementation should use event sourcing - every invoked method should create an event.

@@ -1,4 +1,4 @@
-# Day 28 - circuit breaker
+# Day 28 - Circuit Breaker
 
 Synchronous communication between services may case problems when the service we are calling is unavailable.
 To protect our service from long timeouts, and give the called service a change to restore from problems, we can use circuit breaker.

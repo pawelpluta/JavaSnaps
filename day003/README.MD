@@ -1,4 +1,4 @@
-# Day 3 - parameterized tests
+# Day 3 - Parameterized Tests
 
 Parameterized tests might reduce the amount of test code. In today's task, the code is already working.
 Your responsibility is to rewrite the tests, so they will use data sets. 

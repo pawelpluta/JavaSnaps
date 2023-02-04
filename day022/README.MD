@@ -1,4 +1,4 @@
-# Day 22 - REST retry
+# Day 22 - REST Retry
 
 Today you need to implement retry mechanism for REST client. 
 The client should make another request when first one fails, but if second one also fails, it should return that information.

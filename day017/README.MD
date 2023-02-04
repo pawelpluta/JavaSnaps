@@ -1,4 +1,4 @@
-# Day 17 - micronaut REST API
+# Day 17 - Micronaut REST API
 
 Micronaut is an alternative to Spring Framework.
 In usage, they are very similar with concept, although they differ in mechanics.
