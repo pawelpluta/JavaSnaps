@@ -1,14 +1,12 @@
 # Java Snaps!
 
-At the end of 2022, I found myself a little bit slow in starting everyday work. 
-I had a ritual of checking messages, emails, and company updates before actually digging into a code. 
-In 2023, I challenge myself to start the work with a short and quick coding task that will help me warm up before actual work! 
-Care to join me?
+Starting in 2023, I made a New Year's resolution that I will write a coding task every day for the whole of January. 
+I planned to focus only on Java API, but it was just boring. 
+Instead of that, this repo will contain tasks around JVM and focus on useful frameworks, libraries and approaches. 
+Feel free to fork it and solve the challenges.
 
-Rules are simple. 
-For the whole of January, I will create a new coding challenge. 
-Daily. Tasks will intend to take a few minutes to solve, maybe it will require some research from you. 
-Every task will focus on Java, popular libraries and frameworks. So, let's start!
+The main branch contains only tasks - they might not compile, but most of them will contain tests to check your solution. 
+You might want to check also the sample-solution branch.
 
 ## Tasks
 
